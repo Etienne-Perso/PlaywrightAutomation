@@ -161,7 +161,13 @@ await expect(page).toHaveTitle()					-->Page has a title
 await expect(page).toHaveURL()						-->Page has a URL
 await expect(response).toBeOK()						-->Response has an OK status
 	
+Playwright Hooks:
 
+beforeEach: This hook is executed before each individual test.
+afterEach: This hook is executed after each individual test.
+
+beforeAll: This hook is executed once before any of the tests start runing.
+afterAll: This hook is executed once after all the tests have been run.
 
 
 
