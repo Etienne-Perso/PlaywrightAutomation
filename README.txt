@@ -179,6 +179,24 @@ happening during each action.
 source: https://playwright.dev/docs/trace-viewer-intro
 
 
+Tag tests:
+
+Sometimes you want to tag your tests as @fast or @slow, and then filter by tag in the test 
+report. Or you might want to only run tests that have a certain tag.
+
+To tag a test, either provide an additional details object when declaring a test, or add @-token to
+the test title. Note that tags must start with @ symbol.
+ 
+You can now run tests that have a particular tag with --grep command line option.
+
+	npx playwright test --grep @fast
+
+Or if you want the opposite, you can skip the tests with a certain tag:
+
+	npx playwright test --grep-invert @fast
+ 
+ source: https://playwright.dev/docs/test-annotations#tag-tests
+
 
 
 	
