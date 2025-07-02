@@ -170,6 +170,15 @@ beforeAll: This hook is executed once before any of the tests start runing.
 afterAll: This hook is executed once after all the tests have been run.
 
 
+Trace viewer:
+
+Playwright Trace Viewer is a GUI tool that lets you explore recorded Playwright traces of your tests
+meaning you can go back and forward through each action of your test and visually see what was 
+happening during each action.
+
+source: https://playwright.dev/docs/trace-viewer-intro
+
+
 
 
 	
