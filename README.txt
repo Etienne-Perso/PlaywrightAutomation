@@ -196,28 +196,96 @@ Or if you want the opposite, you can skip the tests with a certain tag:
 	npx playwright test --grep-invert @fast
  
  source: https://playwright.dev/docs/test-annotations#tag-tests
+ 
+ 
+ 
+ Reporters: https://playwright.dev/docs/test-reporters
+ ----------
+ Builtin reporters:
+ 
+ 1)ListReporter:
+	npx playwright test --reporter=list. This command print in the console the result of test execution in form of list.
+
+or you can do this configuration:
+	go to playwright.config.js 
+	under reporter='html'
+	change that by reporter='list'
+	
+ 2)Line reporter: Line reporter is more concise than the list reporter. 
+				  It uses a single line to report last finished test, 
+				  and prints failures when they occur. Line reporter is useful for large test 
+				  suites where it shows the progress but does not spam the output by listing all the tests.
+
+npx playwright test --reporter=line
 
 
+ 3)Dot reporter: Dot reporter is very concise - 
+				 it only produces a single character per successful test run. 
+				 It is the default on CI and useful where you don't want a lot of output.
+				 
+npx playwright test --reporter=dot
 
+
+ 4)HTML reporter: HTML reporter produces a self-contained folder that contains 
+				  report for the test run that can be 
+				  served as a web page.
+				  
+npx playwright test --reporter=html
+
+
+ 5)JSON reporter: JSON reporter produces an object with all information about the test run.
+ 
+npx playwright test --reporter=json. Generate the report in the console
+or you can do this configuration:
+	go to playwright.config.js 
+	under reporter='html'
+	change that by reporter: [['json', { outputFile: 'results.json' }]],
 	
+
+ 6)JUnit reporter: JUnit reporter produces a JUnit-style xml report.
+ 
+npx playwright test --reporter=junit. Generate the report in the console
+or you can do this configuration:
+	go to playwright.config.js 
+	under reporter='html'
+	change that by reporter: [['junit', { outputFile: 'results.xml' }]],
+
+you can combine multiple reporters to generate multiple reports:
+configuration setup:
+go to playwright.config.js
+//Multiple reporters:
+  reporter: [ ['list'],
+              ['html'],
+              ['json', { outputFile: 'results.json' }],
+              ['junit', { outputFile: 'results.xml' }]
+            ],
+
+like so we have list, html, json and junit reports at once
+
+
+Allure report for playwright: third party to install to use it with playwright
+-----------------------------
+1) installtion of "allure-playwright" module
+	npm i -D @playwright/test allure-playwright
 	
+2) installing Allure command line
+	ref: https://www.npmjs.com/package/allure-commandline
+	npm install -g allure-commandline --save-dev
+	(or)
+	sudo npm install -g allure-commandline --save-dev
 	
+3) playwright.config.js
+	reporter=['allure-playwright', {outputFolder: 'my-allure-results'}]
+	(or)
+	npx playwright test --reporter=allure-playwright
+
+4) Run the tests 
+	npx playwright test reporters.spec.js
+
+5) Generate allure report:
+	allure generate my-allure-results -o allure-report --clean
+	(or)
+	allure generate allure-results -o allure-report --clean
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+6) Open Allure report:
+	allure open allure-report

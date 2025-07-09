@@ -1,0 +1,52 @@
+<testsuites id="" name="" tests="3" failures="1" skipped="0" errors="0" time="15.582956">
+<testsuite name="Reporters.spec.js" timestamp="2025-07-09T15:00:24.194Z" hostname="chromium" tests="3" failures="1" skipped="0" time="12.746" errors="0">
+<testcase name="Test1" classname="Reporters.spec.js" time="9.155">
+<failure message="Reporters.spec.js:3:5 Test1" type="FAILURE">
+<![CDATA[  [chromium] › Reporters.spec.js:3:5 › Test1 ───────────────────────────────────────────────────────
+
+    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
+
+    Locator: locator(':root')
+    Expected string: "STOR"
+    Received string: "STORE"
+    Call log:
+      - Expect "toHaveTitle" with timeout 5000ms
+      - waiting for locator(':root')
+        9 × locator resolved to <html lang="en">…</html>
+          - unexpected value "STORE"
+
+
+      4 |
+      5 |     await page.goto("https://demoblaze.com/")
+    > 6 |     await expect(page).toHaveTitle("STOR")
+        |                        ^
+      7 | })
+      8 |
+      9 | test("Test2", async({page})=>{
+        at C:\Users\nordi\Documents\Pavan_Playwright training\PlaywrightAutomation\tests\Reporters.spec.js:6:24
+
+    Error Context: ..\test-results\Reporters-Test1-chromium\error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\Reporters-Test1-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\Reporters-Test1-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\Reporters-Test1-chromium\error-context.md]]
+
+[[ATTACHMENT|test-results\Reporters-Test1-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Test2" classname="Reporters.spec.js" time="1.997">
+</testcase>
+<testcase name="Test3" classname="Reporters.spec.js" time="1.594">
+</testcase>
+</testsuite>
+</testsuites>
