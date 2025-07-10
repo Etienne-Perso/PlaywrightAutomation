@@ -289,3 +289,22 @@ Allure report for playwright: third party to install to use it with playwright
 	
 6) Open Allure report:
 	allure open allure-report
+	
+
+Retries and test flakiness: ref: https://playwright.dev/docs/test-retries
+---------------------------
+Here the 3 senarios to illustrate this topic:
+
+1) passed  - No retry
+2) Failed -Retry -Failed
+3) Failed -Retry -Passed  falky tests
+
+to enable this option, set up this configuration:
+	go to playwright.config.js
+	under retries: process.env.CI ? 2 : 0, 
+	replace it with this entry: retries:1   // 2, 3 or more if your want to run your failed test multiple times
+
+if you want to run that specific test with cl command,
+go with this following: 
+# Give failing test 3 retry attempts 
+npx playwright test --retries=3

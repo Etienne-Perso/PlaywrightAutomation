@@ -1,52 +1,86 @@
-<testsuites id="" name="" tests="3" failures="1" skipped="0" errors="0" time="15.582956">
-<testsuite name="Reporters.spec.js" timestamp="2025-07-09T15:00:24.194Z" hostname="chromium" tests="3" failures="1" skipped="0" time="12.746" errors="0">
-<testcase name="Test1" classname="Reporters.spec.js" time="9.155">
-<failure message="Reporters.spec.js:3:5 Test1" type="FAILURE">
-<![CDATA[  [chromium] › Reporters.spec.js:3:5 › Test1 ───────────────────────────────────────────────────────
-
-    Error: Timed out 5000ms waiting for expect(page).toHaveTitle(expected)
-
-    Locator: locator(':root')
-    Expected string: "STOR"
-    Received string: "STORE"
-    Call log:
-      - Expect "toHaveTitle" with timeout 5000ms
-      - waiting for locator(':root')
-        9 × locator resolved to <html lang="en">…</html>
-          - unexpected value "STORE"
-
-
-      4 |
-      5 |     await page.goto("https://demoblaze.com/")
-    > 6 |     await expect(page).toHaveTitle("STOR")
-        |                        ^
-      7 | })
-      8 |
-      9 | test("Test2", async({page})=>{
-        at C:\Users\nordi\Documents\Pavan_Playwright training\PlaywrightAutomation\tests\Reporters.spec.js:6:24
-
-    Error Context: ..\test-results\Reporters-Test1-chromium\error-context.md
-
-    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
-    test-results\Reporters-Test1-chromium\trace.zip
-    Usage:
-
-        npx playwright show-trace test-results\Reporters-Test1-chromium\trace.zip
-
-    ────────────────────────────────────────────────────────────────────────────────────────────────
-]]>
-</failure>
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="1.6366259999999997">
+<testsuite name="APITests.spec.js" timestamp="2025-07-10T14:14:26.123Z" hostname="chromium" tests="4" failures="0" skipped="0" time="0.713" errors="0">
+<testcase name="Get users" classname="APITests.spec.js" time="0.323">
 <system-out>
-<![CDATA[
-[[ATTACHMENT|test-results\Reporters-Test1-chromium\error-context.md]]
-
-[[ATTACHMENT|test-results\Reporters-Test1-chromium\trace.zip]]
+<![CDATA[{
+  page: [33m2[39m,
+  per_page: [33m6[39m,
+  total: [33m12[39m,
+  total_pages: [33m2[39m,
+  data: [
+    {
+      id: [33m7[39m,
+      email: [32m'michael.lawson@reqres.in'[39m,
+      first_name: [32m'Michael'[39m,
+      last_name: [32m'Lawson'[39m,
+      avatar: [32m'https://reqres.in/img/faces/7-image.jpg'[39m
+    },
+    {
+      id: [33m8[39m,
+      email: [32m'lindsay.ferguson@reqres.in'[39m,
+      first_name: [32m'Lindsay'[39m,
+      last_name: [32m'Ferguson'[39m,
+      avatar: [32m'https://reqres.in/img/faces/8-image.jpg'[39m
+    },
+    {
+      id: [33m9[39m,
+      email: [32m'tobias.funke@reqres.in'[39m,
+      first_name: [32m'Tobias'[39m,
+      last_name: [32m'Funke'[39m,
+      avatar: [32m'https://reqres.in/img/faces/9-image.jpg'[39m
+    },
+    {
+      id: [33m10[39m,
+      email: [32m'byron.fields@reqres.in'[39m,
+      first_name: [32m'Byron'[39m,
+      last_name: [32m'Fields'[39m,
+      avatar: [32m'https://reqres.in/img/faces/10-image.jpg'[39m
+    },
+    {
+      id: [33m11[39m,
+      email: [32m'george.edwards@reqres.in'[39m,
+      first_name: [32m'George'[39m,
+      last_name: [32m'Edwards'[39m,
+      avatar: [32m'https://reqres.in/img/faces/11-image.jpg'[39m
+    },
+    {
+      id: [33m12[39m,
+      email: [32m'rachel.howell@reqres.in'[39m,
+      first_name: [32m'Rachel'[39m,
+      last_name: [32m'Howell'[39m,
+      avatar: [32m'https://reqres.in/img/faces/12-image.jpg'[39m
+    }
+  ],
+  support: {
+    url: [32m'https://contentcaddy.io?utm_source=reqres&utm_medium=json&utm_campaign=referral'[39m,
+    text: [32m'Tired of writing endless social media content? Let Content Caddy generate it for you.'[39m
+  }
+}
 ]]>
 </system-out>
 </testcase>
-<testcase name="Test2" classname="Reporters.spec.js" time="1.997">
+<testcase name="Create user" classname="APITests.spec.js" time="0.137">
+<system-out>
+<![CDATA[{
+  name: [32m'Jhon'[39m,
+  job: [32m'trainer'[39m,
+  id: [32m'26'[39m,
+  createdAt: [32m'2025-07-10T14:14:26.660Z'[39m
+}
+]]>
+</system-out>
 </testcase>
-<testcase name="Test3" classname="Reporters.spec.js" time="1.594">
+<testcase name="Update user" classname="APITests.spec.js" time="0.124">
+<system-out>
+<![CDATA[{
+  name: [32m'Jhon'[39m,
+  job: [32m'engineer'[39m,
+  updatedAt: [32m'2025-07-10T14:14:26.804Z'[39m
+}
+]]>
+</system-out>
+</testcase>
+<testcase name="Delete user" classname="APITests.spec.js" time="0.129">
 </testcase>
 </testsuite>
 </testsuites>
